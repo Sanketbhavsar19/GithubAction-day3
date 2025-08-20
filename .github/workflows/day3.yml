@@ -20,13 +20,8 @@ jobs:
          - name: Deploy sample index.html
            run:
               echo "<h1>Hello from Github Actions self-hosted Runner</h1>" | sudo tee /var/www/html/index.html
-         - name: Test Application Code
-           run: ls -l
 
-         - name: Create a file in self-hosted 
-           run: echo "Testing the self hosted Runner" > output.txt
-           
          - name: verify Apache is running
            run:
-            systemctl status apache2 --no-pager
-            curl -I http://localhost  
+              systemctl status apache2 --no-pager
+              curl -I http://localhost  
