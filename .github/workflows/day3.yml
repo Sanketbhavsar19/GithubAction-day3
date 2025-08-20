@@ -18,10 +18,10 @@ jobs:
                  sudo systemctl start apache2
 
          - name: Deploy sample index.html
-           run:
+           run: |
               echo "<h1>Hello from Github Actions self-hosted Runner</h1>" | sudo tee /var/www/html/index.html
 
          - name: verify Apache is running
-           run:
+           run: |
               systemctl status apache2 --no-pager
-              curl -I http://localhost  
+               curl -I http://localhost  
