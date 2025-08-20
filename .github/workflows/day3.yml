@@ -1,0 +1,14 @@
+name: My first Github self hosted runner
+
+on: workflow_dispatch
+
+jobs:
+    Test:
+        runs-on: ubuntu-latest
+
+        steps:
+         - name: Code Checkout Repo
+           uses: actions/checkout@v5
+
+         - name: Test Application Code
+           run: ls -l
